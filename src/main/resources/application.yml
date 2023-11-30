@@ -10,7 +10,7 @@ server:
 spring:
   datasource:
     username: root
-    password: '0111'
+    password:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3306/bookrent?serverTimezone=Asia/Seoul
   jpa:
