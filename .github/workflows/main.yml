@@ -9,6 +9,7 @@ on:
 env:
   AWS_REGION: ap-northeast-2
   AWS_S3_BUCKET: app-release-files
+  S3_BUCKET_NAME: cicd-bucket2
   AWS_CODE_DEPLOY_APPLICATION: cicd-CD
   AWS_CODE_DEPLOY_GROUP: cicd-CD-group
 
