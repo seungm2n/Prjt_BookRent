@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>로그인</title>
+  <link rel="stylesheet" href="/index.css"/>
+</head>
+<body>
+<div class="content">
+  <header th:replace="/header.html"></header>
+  <h1>로그인</h1>
+  <form th:action="@{/login}" method="post" class="sign_In">
+    <div class="login">
+      <label class="form-label">이름</label>
+      <input type="text" name="username" id="username"><br/>
+      <label class="form-label">비밀번호</label>
+      <input type="password" name="password" id="password"><br/>
+      <input type="submit" value="로그인" />
+    </div>
+  </form>
+  <div th:if="${param.error}" class="alert alert-danger">
+    <p class="error-message">아이디 또는 비밀번호를 확인해 주세요.</p>
+  </div>
+</div>
+</body>
+</html>

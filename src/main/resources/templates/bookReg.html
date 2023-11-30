@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>도서 등록하기</title>
+    <link rel="stylesheet" href="/index.css"/>
+</head>
+<body>
+<div class="content">
+
+    <header th:replace="/header.html"></header>
+    <h1>도서 등록</h1>
+        <form th:object="${bookRegForm}" method="post" class="form">
+            <div class="input_info-book">
+                <div class="input_title">
+                    <label class="form-label">도서명</label>
+                <input type="text" th:field="*{title}" class="form-control form-control-1">
+                    <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error-message"></p>
+                </div>
+                <div class="input_author">
+                    <label class="form-label">저자명</label>
+                    <input type="text" th:field="*{author}" class="form-control form-control-1">
+                    <p th:if="${#fields.hasErrors('author')}" th:errors="*{author}" class="error-message"></p>
+                </div>
+                <div class="button">
+                    <input type="submit" value="등록하기" class="btn btn-primary my-2">
+                </div>
+            </div>
+        </form>
+</div>
+</body>
+</html>

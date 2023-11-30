@@ -1,0 +1,85 @@
+a{text-decoration: none;}
+ul, ol { list-style: none; }
+div { display:block; }
+li { margin: 5px 10px;}
+
+header {
+    display:flex;
+    justify-content: space-around;
+}
+.header_menu_list {
+    display:flex;
+    justify-content: space-between;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+}
+.content {
+    margin: 0 auto;
+    width: 1000px;
+}
+.input_info-book {
+    margin: 5px 20px;
+}
+input_title, .input_author {
+    margin: 10px 0;
+}
+table {
+    width: 100%;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #444444;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #ccc;
+}
+.pagination {
+    text-align: center;
+}
+.pagination a {
+    display: inline-block;
+
+    background-color: #f1f1f1;
+    text-decoration: none;
+    color: #333;
+    border-radius: 3px;
+}
+
+.pagination-1{
+    flex-direction: column;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.page-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list_pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.page-link {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+}
+
+.page-item{
+    Display:inline-block;
+}

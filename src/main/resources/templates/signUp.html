@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="/index.css"/>
+</head>
+<body>
+<div class="content">
+<header th:replace="/header.html"></header>
+<h1>회원가입</h1>
+    <form th:action="@{/signup}" th:object="${signUpForm}" method="post" class="sign_In">
+
+        <div class="signup">
+            <input type="text" th:field="*{username}" class="form-control" placeholder="이름" />
+            <div th:if="${#fields.hasErrors('username')}" class="error-message">
+                <p th:errors="*{username}"></p>
+            </div>
+            <input type="password" th:field="*{password}" class="form-control" placeholder="비밀번호" />
+            <div th:if="${#fields.hasErrors('password')}" class="error-message">
+                <p th:errors="*{password}"></p>
+            </div>
+            <input type="password" th:field="*{confirmPassword}" class="form-control" placeholder="비밀번호 확인">
+            <div th:if="${#fields.hasErrors('confirmPassword')}" class="error-message">
+                <p th:errors="*{confirmPassword}"></p>
+            </div>
+
+            <input type="submit" value="회원가입"/>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
