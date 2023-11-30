@@ -1,19 +1,19 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-JAR_NAME=$(ls $PROJECT_ROOT/build/libs/ | grep '.jar' | tail -n 1)
-JAR_PATH=$PROJECT_ROOT/build/libs/$JAR_NAME
+ROOT_PATH="/home/ubuntu/app"
+JAR="$ROOT_PATH/application.jar"
 
+APP_LOG="$ROOT_PATH/log/application.log"
+ERROR_LOG="$ROOT_PATH/log/error.log"
+START_LOG="$ROOT_PATH/log/start.log"
 
-APP_LOG="$PROJECT_ROOT/log/application.log"
-ERROR_LOG="$PROJECT_ROOT/log/error.log"
-DEPLOY_LOG="$PROJECT_ROOT/log/deploy.log"
+NOW=$(date +%c)
 
-TIME_NOW=$(date +%c)
+echo "[$NOW] $JAR 복사" >> $START_LOG
+cp $ROOT_PATH/build/libs/bookRent-1.0.0.jar $JAR
 
-# build 파일 복사
-echo "$TIME_NOW > $JAR_FILE 파일 복사" >> $DEPLOY_LOG
-cp $PROJECT_ROOT/build/libs/*.jar $JAR_FILE
+echo "[$NOW] > $JAR 실행" >> $START_LOG
+nohup java -jar $JAR > $APP_LOG 2> $ERROR_LOG &
 
-# jar 파일 실행
-echo "$TIME_NOW > $JAR_FILE 파일 실행" >> $DEPLOY_LOG
-nohup java -jar $JAR_FILE > $APP_LOG 2> $ERROR_LOG &
+SERVICE_PID=$(pgrep -f $JAR)
+echo "[$NOW] > 서비스 PID: $SERVICE_PID" >> $START_LOG
