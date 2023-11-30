@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-JAR_NAME=$(ls $PROJECT_ROOT/build/libs/ | grep '.jar' | tail -n 1)
+JAR_NAME=$(ls $PROJECT_ROOT/build/libs/application.jar)
 JAR_PATH=$PROJECT_ROOT/build/libs/$JAR_NAME
 
 
