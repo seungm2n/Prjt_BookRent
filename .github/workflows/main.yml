@@ -27,7 +27,7 @@ jobs:
         java-version: '20'
         distribution: 'corretto'
 
-    //application.yml 만들기
+
     - uses: actions/checkout@v2
     - run: touch ./src/main/resources/application.yml
     - run: echo "${{secrets.APPLICATION}}" > ./src/main/resources/application.yml
