@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ROOT_PATH="/home/ubuntu/app"
-JAR="$ROOT_PATH/bookRent-1.0.0.jar"
+JAR="$ROOT_PATH/application.jar"
 
 APP_LOG="$ROOT_PATH/log/application.log"
 ERROR_LOG="$ROOT_PATH/log/error.log"
